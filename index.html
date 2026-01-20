@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Pathways Portal – Pathways</title>
+    <title>Pathways Portal</title>
     <style>
         * {
             box-sizing: border-box;
@@ -74,76 +74,111 @@
 
         h2 {
             margin-top: 0;
-            font-size: 32px
+            font-size: 28px
         }
 
-        p {
-            max-width: 720px;
-            color: #374151
+        .subtitle {
+            color: #374151;
+            margin-bottom: 24px
         }
 
-        .section-title {
-            margin-top: 32px;
-            font-size: 22px
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
-            margin-top: 20px
+        .subtitle a {
+            color: #1d4ed8;
+            text-decoration: none;
+            font-weight: 600
         }
 
         .card {
+            width: 360px;
             background: #ffffff;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
+            padding: 16px
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 16px;
+            color: #374151
+        }
+
+        .section {
+            background: #f1f5f9;
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 14px
+        }
+
+        .section-title {
+            font-weight: 600;
+            margin-bottom: 6px
+        }
+
+        .section p {
+            font-size: 14px;
+            color: #4b5563;
+            margin: 0 0 10px
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .btn {
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
             text-decoration: none;
-            color: #111827
+            display: inline-block
         }
 
-        .card img {
-            width: 100%;
-            height: 140px;
-            object-fit: cover
+        .btn-blue {
+            background: #3b82f6;
+            color: #fff
         }
 
-        .card-body {
-            padding: 14px
+        .status {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #ca8a04;
+            font-weight: 600
         }
 
-        .card-body h3 {
-            margin: 0 0 6px;
-            font-size: 16px
-        }
-
-        .card-body span {
-            display: inline-block;
-            background: #e5e7eb;
-            color: #374151;
-            font-size: 12px;
-            padding: 4px 8px;
-            border-radius: 999px
-        }
-
-        .favorite {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 22px;
-            height: 22px;
+        .status::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border: 2px solid #ca8a04;
             border-radius: 50%;
-            background: #ffffff;
+            margin-right: 6px
+        }
+
+        .complete {
+            color: #15803d
+        }
+
+        .check {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #22c55e;
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
-            color: #2563eb
+            font-size: 12px;
+            margin-left: 6px
         }
 
-        .card-wrap {
-            position: relative
+        .btn-green {
+            background: #5eead4;
+            color: #065f46;
+            font-weight: 600
         }
     </style>
 </head>
@@ -156,102 +191,40 @@
     <div class="container">
         <aside>
             <nav>
-                <a href="dashboard.html">Dashboard</a>
-                <a class="active" href="pathways.html">Pathways</a>
+                <a class="active" href="dashboard.html">Dashboard</a>
+                <a href="pathways.html">Pathways</a>
                 <a href="progress.html">My Progress</a>
                 <a href="about.html">About</a>
                 <a href="settings.html">Settings</a>
             </nav>
         </aside>
         <main>
-            <h2>Pathways</h2>
-            <p>
-                Explore different career pathways to help you earn endorsements for your diploma.
-                Each pathway will guide you towards completing specific requirements to gain valuable skills and
-                knowledge in a chosen field.
-            </p>
-            <div class="section-title">Explore Your Career Pathways</div>
-            <div class="grid">
-                <a class="card" href="animal-systems.html">
-                    <div class="card-wrap">
-                        <div class="favorite">✓</div>
-                        <img src="https://www.canr.msu.edu/academics/undergraduate/animalscience.jpg?language_id=1" alt="">
+            <h2>My Dashboard</h2>
+            <div class="subtitle">
+                Track your progress toward diploma endorsements.
+                <a href="progress.html">View all details in My Progress.</a>
+            </div>
+            <div class="card">
+                <h3>To-Do List</h3>
+                <div class="section">
+                    <div class="section-title">Test Scores</div>
+                    <p>Submit your test scores to check if you qualify for endorsements.</p>
+                    <div class="row">
+                        <a class="btn btn-blue" href="upload-scores.html">Upload Scores</a>
+                        <div class="status">Pending</div>
                     </div>
-                    <div class="card-body">
-                        <h3>Animal Systems*</h3>
-                        <span>Agriculture</span>
+                </div>
+                <div class="section">
+                    <div class="section-title">Course Requirements</div>
+                    <p>Mark classes complete once you've passed to update your progress.</p>
+                    <div class="row">
+                        <a class="btn btn-green" href="course-requirements.html">✓ Completed</a>
+                        <div class="row complete">
+                            Completed
+                            <div class="check">✓</div>
+                        </div>
                     </div>
-                </a>
-                <a class="card" href="architecture-construction.html">
-                    <div class="card-wrap">
-                        <div class="favorite">✓</div>
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h3>Architecture & Construction</h3>
-                        <span>Construction</span>
-                    </div>
-                </a>
-                <a class="card" href="audio-visual.html">
-                    <div class="card-wrap">
-                        <div class="favorite">✓</div>
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h3>Audio/Visual Technology</h3>
-                        <span>Arts, Entertainment & Design</span>
-                    </div>
-                </a>
-                <a class="card" href="health-sciences.html">
-                    <div class="card-wrap">
-                        <div class="favorite">✓</div>
-                        <img src="https://www.rasmussen.edu/images/rasmussenlibraries/blogs/school-of-health-sciences/2024/health-science-vs-med-science-og.jpg" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h3>Health Sciences*</h3>
-                        <span>Healthcare & Human Services</span>
-                    </div>
-                </a>
-                <a class="card" href="hospitality-tourism.html">
-                    <div class="card-wrap">
-                        <div class="favorite">✓</div>
-                        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h3>Hospitality & Tourism</h3>
-                        <span>Hospitality, Events & Tourism</span>
-                    </div>
-                </a>
-                <a class="card" href="cosmetology.html">
-                    <div class="card-wrap">
-                        <div class="favorite">✓</div>
-                        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h3>Cosmetology*</h3>
-                        <span>Healthcare & Human Services</span>
-                    </div>
-                </a>
-                <a class="card" href="human-services.html">
-                    <div class="card-wrap">
-                        <div class="favorite">✓</div>
-                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h3>Human Services</h3>
-                        <span>Human Services</span>
-                    </div>
-                </a>
-                <a class="card" href="education-training.html">
-                    <div class="card-wrap">
-                        <div class="favorite">✓</div>
-                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h3>Education & Training*</h3>
-                        <span>Education & Training</span>
-                    </div>
-                </a>
+                </div>
             </div>
         </main>
     </div>
